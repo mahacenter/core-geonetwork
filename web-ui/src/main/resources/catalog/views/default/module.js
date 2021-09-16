@@ -93,6 +93,72 @@
       };
     }]);
 
+  module.controller('gnsMahaSearchController', [
+    '$scope', 'gnGlobalSettings',
+    function($scope, gnGlobalSettings) {
+      var _cat = 'Base map';
+      var _types = {
+        'Base map': [
+          'District basemap',
+          'District basemap 1km',
+          'District basemap 3km',
+          'District basemap 5km',
+          'Sub-District basemap'
+        ],
+        'Smart map': [
+          'Sub-District smartmap',
+          'District smartmap'
+        ],
+        'Coverage map': [
+          'District map displayed at Sub-District level',
+          'Regional map displayed at Sub-District level',
+          'Regional map displayed at District level'
+        ]
+      };
+
+      $scope.antigens = [
+        'BCG',
+        'IPV',
+        'Men A',
+        'MR-1',
+        'MR-2',
+        'OPV 3',
+        'PCV 3',
+        'Penta 3',
+        'Rota 2',
+        'Yellow Fever'
+      ];
+
+      $scope.type = _types[_cat][0];
+
+      $scope.allowAntigen = function () {
+        return _cat == 'Coverage map';
+      };
+
+      $scope.category = function (a) {
+        if (!a) {
+          return _cat;
+        }
+        _cat = a;
+        $scope.antigen = _cat === 'Coverage map' ? 'BCG' : null;
+        $scope.type = _types[_cat][0];
+        console.log('set category', $scope.antigen);
+      };
+
+      $scope.types = function () {
+        return _types[_cat];
+      };
+
+      $scope.facetQuery = function () {
+        console.log('query', $scope.allowAntigen(), $scope.antigen);
+        var base = 'format%2F' + $scope.scale + '%26type%2F' + $scope.type;
+        if ($scope.allowAntigen()) {
+          return base + '%26keyword%2F' + $scope.antigen;
+        }
+        return base;
+      };
+    }]);
+
 
   module.controller('gnsDefault', [
     '$scope',

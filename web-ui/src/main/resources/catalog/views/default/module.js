@@ -93,6 +93,50 @@
       };
     }]);
 
+  module.controller('gnsMahaSearchController', [
+    '$scope', 'gnGlobalSettings',
+    function($scope, gnGlobalSettings) {
+      var _cat = '';
+      var _types = {
+        'Base map': [
+          'District base map'
+        ],
+        'Smart map': [
+          'Catchment Areas 1km',
+          'Catchment Areas 3km',
+          'Catchment Areas 5km'
+        ],
+      };
+
+      $scope.hasCategory = function () {
+        return _cat && _cat !== '';
+      };
+
+      $scope.hasType = function () {
+        var type = $scope.type;
+        return type && type !== '';
+      };
+
+      $scope.category = function (a) {
+        if (!a) {
+          return _cat;
+        }
+        _cat = a;
+        $scope.type = '';
+      };
+
+      $scope.types = function () {
+        if ($scope.hasCategory()) {
+          return _types[_cat];
+        }
+        return [];
+      };
+
+      $scope.facetQuery = function () {
+        return 'type%2F' + $scope.type;
+      };
+    }]);
+
 
   module.controller('gnsDefault', [
     '$scope',

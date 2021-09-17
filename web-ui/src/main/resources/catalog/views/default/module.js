@@ -41,6 +41,300 @@
        'gn_search_default_directive', 'gn_related_directive',
        'cookie_warning', 'gn_mdactions_directive', 'gn_gridrelated_directive']);
 
+  var GHANA_REGIONS = {
+    "Ahafo": [
+      "Asunafo North",
+      "Asunafo South",
+      "Asutifi North",
+      "Asutifi South",
+      "Tano North",
+      "Tano South"
+    ],
+    "Ashanti": [
+      "Adansi Akrofuom",
+      "Adansi Asokwa",
+      "Adansi North",
+      "Adansi South",
+      "Afigya Kwabre North",
+      "Afigya Kwabre South",
+      "Ahafo Ano North",
+      "Ahafo Ano South East",
+      "Ahafo Ano South West",
+      "Amansie Central",
+      "Amansie South",
+      "Amansie West",
+      "Asante Akim Central",
+      "Asante Akim North",
+      "Asante Akim South",
+      "Asante Mampong",
+      "Asokore Mampong",
+      "Asokwa",
+      "Atwima Kwanwoma",
+      "Atwima Mponua",
+      "Atwima Nwabiagya",
+      "Atwima Nwabiagya North",
+      "Bekwai",
+      "Bosome Freho",
+      "Bosomtwe",
+      "Ejisu",
+      "Ejura-Sekyedumase",
+      "Juaben",
+      "Kumasi",
+      "Kwabre East",
+      "Kwadaso",
+      "Obuasi",
+      "Obuasi East",
+      "Offinso",
+      "Offinso North",
+      "Oforikrom",
+      "Old Tafo",
+      "Sekyere Afram Plains",
+      "Sekyere Central",
+      "Sekyere East",
+      "Sekyere Kumawu",
+      "Sekyere South",
+      "Suame"
+    ],
+    "Bono": [
+      "Banda",
+      "Berekum",
+      "Berekum West",
+      "Dormaa East",
+      "Dormaa Municipal",
+      "Dormaa West",
+      "Jaman North",
+      "Jaman South",
+      "Sunyani Municipal",
+      "Sunyani West",
+      "Tain",
+      "Wenchi"
+    ],
+    "Bono East": [
+      "Atebubu-Amanten",
+      "Kintampo North",
+      "Kintampo South",
+      "Nkoranza North",
+      "Nkoranza South",
+      "Pru",
+      "Pru West",
+      "Sene East",
+      "Sene West",
+      "Techiman Municipal",
+      "Techiman North"
+    ],
+    "Central": [
+      "Abura-Asebu-Kwamankese",
+      "Agona East",
+      "Agona West",
+      "Ajumako-Enyan-Essiam",
+      "Asikuma-Odoben-Brakwa",
+      "Assin Foso",
+      "Assin North",
+      "Assin South",
+      "Awutu Senya",
+      "Awutu Senya East",
+      "Cape Coast",
+      "Efutu",
+      "Ekumfi",
+      "Gomoa Central",
+      "Gomoa East",
+      "Gomoa West",
+      "Komenda-Edna-Eguafo-Abirem",
+      "Mfantsiman",
+      "Twifo-Ati-Mokwa",
+      "Twifo-Hemang Lower Denkyira",
+      "Upper Denkyira East",
+      "Upper Denkyira West"
+    ],
+    "Eastern": [
+      "Abuakwa North",
+      "Achiase",
+      "Afram Plains South",
+      "Akwapim North",
+      "Akwapim South",
+      "Akyemansa",
+      "Asene Manso Akroso",
+      "Asuogyaman",
+      "Atiwa East",
+      "Atiwa West",
+      "Ayensuano",
+      "Birim Central",
+      "Birim North",
+      "Birim South",
+      "Denkyembour",
+      "East Akim - Abuakwa South",
+      "Fanteakwa North",
+      "Fanteakwa South",
+      "Kwaebibirem",
+      "Kwahu East",
+      "Kwahu North",
+      "Kwahu South",
+      "Kwahu West",
+      "Lower-Manya Krobo",
+      "New Juaben North",
+      "New Juaben South",
+      "Nsawam-Adoagyiri",
+      "Okere",
+      "Suhum",
+      "Upper Manya-Krobo",
+      "Upper West Akim",
+      "West Akim",
+      "Yilo-Krobo"
+    ],
+    "Greater Accra": [
+      "Ablekuma Central",
+      "Ablekuma North",
+      "Ablekuma West",
+      "Accra Metro",
+      "Ada East",
+      "Ada West",
+      "Adentan",
+      "Ashaiman",
+      "Ayawaso Central",
+      "Ayawaso East",
+      "Ayawaso North",
+      "Ayawaso West",
+      "Ga Central",
+      "Ga East",
+      "Ga North",
+      "Ga South",
+      "Ga West",
+      "Korle-Klottey",
+      "Kpone-Katamanso",
+      "Krowor",
+      "La-Dade-Kotopon",
+      "La-Nkwantanang-Madina",
+      "Ledzokuku",
+      "Ningo Prampram",
+      "Okai Koi North",
+      "Shai-Osudoku",
+      "Tema",
+      "Tema West",
+      "Weija-Gbawe"
+    ],
+    "North East": [
+      "Bunkpurugu -Nakpanduri",
+      "Chereponi",
+      "East Mamprusi",
+      "Mamprugu-Moagduri",
+      "West Mamprusi",
+      "Yunyoo-Nasuan"
+    ],
+    "Northern": [
+      "Gushiegu",
+      "Karaga",
+      "Kpandai",
+      "Kumbungu",
+      "Mion",
+      "Nanton",
+      "Nanumba North",
+      "Nanumba South",
+      "Saboba",
+      "Sagnarigu",
+      "Savelugu",
+      "Tamale",
+      "Tatale-Sangule",
+      "Tolon",
+      "Yendi",
+      "Zabzugu"
+    ],
+    "Oti": [
+      "Biakoye",
+      "Jasikan",
+      "Kadjebi",
+      "Krachi East",
+      "Krachi Nchumuru",
+      "Krachi West",
+      "Nkwanta North",
+      "Nkwanta South"
+    ],
+    "Savannah": [
+      "Bole",
+      "Central Gonja",
+      "East Gonja",
+      "North Gonja",
+      "North-East Gonja",
+      "Sawla-Tuna-Kalba",
+      "West Gonja"
+    ],
+    "Upper East": [
+      "Bawku Municipal",
+      "Bawku West",
+      "Binduri",
+      "Bolgatanga East",
+      "Bolgatanga Municipal",
+      "Bongo",
+      "Builsa North",
+      "Builsa South",
+      "Garu",
+      "Kasena-Nankana",
+      "Kasena-Nankana West",
+      "Nabdam",
+      "Pusiga",
+      "Talensi",
+      "Tempane"
+    ],
+    "Upper West": [
+      "Daffiama-Bussie-Issa",
+      "Jirapa",
+      "Lambussie",
+      "Lawra",
+      "Nadowli-Kaleo",
+      "Nandom",
+      "Sissala East",
+      "Sissala West",
+      "Wa East",
+      "Wa Municipal",
+      "Wa West"
+    ],
+    "Volta": [
+      "Adaklu",
+      "Afadjato South",
+      "Agortime-Ziope",
+      "Akatsi North",
+      "Akatsi South",
+      "Anloga",
+      "Central Tongu",
+      "Ho",
+      "Ho West",
+      "Hohoe",
+      "Keta",
+      "Ketu North",
+      "Ketu South",
+      "Kpando",
+      "North Dayi",
+      "North Tongu",
+      "South Dayi",
+      "South Tongu"
+    ],
+    "Western": [
+      "Ahanta West",
+      "Effia-Kwesimintsim",
+      "Ellembelle",
+      "Jomoro",
+      "Mpohor",
+      "Nzema East",
+      "Prestea-Huni Valley",
+      "Sekondi-Takoradi",
+      "Shama",
+      "Tarkwa-Nsuaem",
+      "Wassa Amenfi Central",
+      "Wassa Amenfi East",
+      "Wassa Amenfi West",
+      "Wassa East"
+    ],
+    "Western North": [
+      "Aowin",
+      "Bia East",
+      "Bia West",
+      "Bibiani-Anhwiaso-Bekwai",
+      "Bodi",
+      "Juaboso",
+      "Sefwi-Akontombra",
+      "Sefwi-Wiawso",
+      "Suaman"
+    ]
+  };
 
   module.controller('gnsSearchPopularController', [
     '$scope', 'gnSearchSettings',
@@ -96,7 +390,8 @@
   module.controller('gnsMahaSearchController', [
     '$scope', 'gnGlobalSettings',
     function($scope, gnGlobalSettings) {
-      var _cat = 'Base map';
+      var _cat = '';
+      var _region = '';
       var _types = {
         'Base map': [
           'District basemap',
@@ -129,29 +424,64 @@
         'Yellow Fever'
       ];
 
-      $scope.type = _types[_cat][0];
+      $scope.regions = Object.keys(GHANA_REGIONS);
 
       $scope.allowAntigen = function () {
-        return _cat == 'Coverage map';
+        // return _cat == 'Coverage map';
+        return false;
       };
 
-      $scope.category = function (a) {
-        if (!a) {
+      $scope.isDefined = function (thing) {
+        return thing && thing !== '';
+      };
+
+      $scope.hasCategory = function () {
+        return $scope.isDefined(_cat);
+      };
+
+      $scope.hasType = function () {
+        return $scope.isDefined($scope.type);
+      };
+
+      $scope.hasScale = function () {
+        return $scope.isDefined($scope.scale);
+      };
+
+      $scope.hasDistrict = function () {
+        return $scope.isDefined($scope.district);
+      };
+
+      $scope.category = function (arg) {
+        if (!arg) {
           return _cat;
         }
-        _cat = a;
+        _cat = arg;
         $scope.antigen = _cat === 'Coverage map' ? 'BCG' : null;
-        $scope.type = _types[_cat][0];
+        $scope.type = '';
         console.log('set category', $scope.antigen);
+      };
+
+      $scope.region = function (arg) {
+        if (!arg) {
+          return _region;
+        }
+        _region = arg;
+        $scope.district = '';
       };
 
       $scope.types = function () {
         return _types[_cat];
       };
 
+      $scope.districts = function () {
+        var districts = GHANA_REGIONS[$scope.region()];
+        console.log('REturning districts of region', $scope.region(), districts);
+        return districts || [];
+      };
+
       $scope.facetQuery = function () {
         console.log('query', $scope.allowAntigen(), $scope.antigen);
-        var base = 'format%2F' + $scope.scale + '%26type%2F' + $scope.type;
+        var base = 'format%2F' + $scope.scale + '%26type%2F' + $scope.type + '%26keyword%2F' + $scope.district;
         if ($scope.allowAntigen()) {
           return base + '%26keyword%2F' + $scope.antigen;
         }

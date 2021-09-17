@@ -4,11 +4,12 @@
       <div class="col-md-offset-1 col-md-10 col-lg-8 col-lg-offset-2">
 
         <div class="jumbotron">
-          <p class="lead">Choose the map type you want, and its options...</p>
+          <p class="lead">Choose the « Map type » and the « Administration level » so to display the expected maps</p>
           <form class="form-horizontal"
                 role="form"
                 data-ng-controller="gnsMahaSearchController">
             <select class="form-control" data-ng-model="category" ng-model-options=" {getterSetter: true }">
+              <option value="">-- Choose a map type --</option>
               <option value="Base map">Base map</option>
               <option value="Smart map">Smart map</option>
               <option value="Coverage map">Coverage map</option>
@@ -21,31 +22,51 @@
               </select>
             </div>
             <select class="form-control" data-ng-model="type" >
+              <option value="">-- Choose an administration level --</option>
               <option data-ng-repeat="c in types()" value="{{c}}">
                 {{c}}
               </option>
             </select>
-            <div class="input-group gn-form-any">
-              <select class="form-control" data-ng-model="scale" ng-init="scale = 'region'">
+            <div class="gn-margin-bottom">
+              <select class="form-control" data-ng-model="scale" ng-init="scale = ''">
+                <option value="">-- Choose the scale --</option>
                 <option value="region">Region</option>
                 <option value="district">District</option>
                 <option value="subdistrict">Sub-district</option>
               </select>
+            </div>
+
+            <hr style="border-color: lightgrey;" />
+
+            <select class="form-control" data-ng-model="region" ng-model-options=" {getterSetter: true }">
+              <option value="">-- Choose the region --</option>
+              <option data-ng-repeat="c in regions" value="{{c}}">
+                {{c}}
+              </option>
+            </select>
+            <div class="input-group gn-form-any">
+              <select class="form-control" data-ng-model="district" ng-init="district = ''">
+                <option value="">-- Choose the district --</option>
+                <option data-ng-repeat="c in districts()" value="{{c}}">
+                  {{c}}
+                </option>
+              </select>
 
               <span class="input-group-btn">
-                <a class="btn btn-primary btn-lg"
+                <a class="btn btn-primary btn-md"
                    type="button"
+                   data-ng-disabled="!hasType() || !hasCategory() || !hasScale() || !hasDistrict()"
                    data-ng-href="#/search?_cat={{category()}}&facet.q={{facetQuery()}}&resultType=details&sortBy=relevance&from=1&to=20&fast=index&_content_type=json"
                 >
                   <i class="fa fa-search"></i>
-                  <span class="sr-only" data-translate="">search</span>
+                  <span data-translate="">search</span>
                 </a>
               </span>
             </div>
           </form>
         </div>
 
-        <div data-translate="" class="search-divider">OR</div>
+        <div data-translate="" class="search-divider">In order to shorten the scope of the displayed maps, you can write the name of a particular region or district</div>
 
         <div class="input-group gn-form-any">
           <input type="text"
@@ -53,7 +74,7 @@
                 autofocus=""
                 data-ng-model="homeAnyField"
                 data-ng-model-options="modelOptions"
-                placeholder="{{'anyPlaceHolder' | translate}}"
+                placeholder="Search function: write the name of your targeted geographical area"
                 aria-label="{{'anyPlaceHolder' | translate}}"
                 data-ng-keyup="$event.keyCode == 13 && goToSearch(homeAnyField)"
                 data-typeahead="address for address in getAnySuggestions($viewValue)"

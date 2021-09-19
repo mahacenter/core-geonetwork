@@ -160,7 +160,7 @@
     "exportPDF": "내보내기 (PDF)",
     "exportMEF": "내보내기 (ZIP)",
     "welcomeText": "여기에서 데이터, 서비스, 지도 등을 찾을 수 있습니다.",
-    "searchOver": "Search <strong>{{records}}</strong> data sets, services and maps, ...",
+    "searchOver": "There are currently <strong>{{records}}</strong> static maps, which are made available on-line for the sake of (i) being displayed on electronic devices such as tablets or mobile phones or (ii) being printed for micro planning purposes ",
     "browseBy": "탐색: ",
     "browseTopics": "주제 탐색",
     "browseTypes": "자원 탐색",

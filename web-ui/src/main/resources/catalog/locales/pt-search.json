@@ -160,7 +160,7 @@
     "exportPDF": "Exportar (PDF)",
     "exportMEF": "Exportar (ZIP)",
     "welcomeText": "Aqui você encontrará dados, serviços, mapas e mais.",
-    "searchOver": "Search <strong>{{records}}</strong> data sets, services and maps, ...",
+    "searchOver": "There are currently <strong>{{records}}</strong> static maps, which are made available on-line for the sake of (i) being displayed on electronic devices such as tablets or mobile phones or (ii) being printed for micro planning purposes ",
     "browseBy": "Navegar por",
     "browseTopics": "Pesquisar tópicos",
     "browseTypes": "Procurar recursos",

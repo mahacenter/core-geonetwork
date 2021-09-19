@@ -160,7 +160,7 @@
     "exportPDF": "导出 ( PDF )",
     "exportMEF": "导出 ( ZIP )",
     "welcomeText": "在这里您会发现数据、服务和地图等。",
-    "searchOver": "Search <strong>{{records}}</strong> data sets, services and maps, ...",
+    "searchOver": "There are currently <strong>{{records}}</strong> static maps, which are made available on-line for the sake of (i) being displayed on electronic devices such as tablets or mobile phones or (ii) being printed for micro planning purposes ",
     "browseBy": "浏览",
     "browseTopics": "浏览主题",
     "browseTypes": "浏览资源",
